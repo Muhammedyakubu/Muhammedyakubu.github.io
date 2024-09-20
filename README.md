@@ -8,6 +8,10 @@ Muhammed Yakubu's clone of [Varad Bhogayata's](https://github.com/varadbhogayata
 
 <img width="2050" alt="repo" src="https://github.com/user-attachments/assets/067df776-55d6-4790-8874-872a5737b75f">
 
+# Activity 3 Screenshots
+<img width="1283" alt="website" src="https://github.com/user-attachments/assets/db3d5970-6ada-4327-ad57-d718e28f1a66">
+
+<img width="1954" alt="repo" src="https://github.com/user-attachments/assets/5e46f7a9-a7ea-4d84-b180-1b5e9f099354">
 
 # Personal Portfolio ⚡️ 
 > A clean, beautiful, responsive portfolio template for Software Developers!
