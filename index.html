@@ -435,101 +435,11 @@
         <section id="projects" class="section scrollspy">
           <h3 class="page-title white-text blue">Projects</h3>
           <div class="container">
-            <div class="row">
-    
-              <div class="col s12 m6 l4">
-                <div class="card medium">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img alt="Syllabyte logo" src="/assets/img/syllabyte-logo.png" style="height: 100%; width: 75%; display: block; margin-left: auto; margin-right: auto;" class="activator" />
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator blue-text hoverline">Syllabyte<i
-                        class="mdi-navigation-more-vert right"></i></span>
-                    <p>
-                      A product that provides students with a daily, automatically prioritized to-do list for their coursework.
-                    </p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text"><small>Accomplishments</small><i
-                        class="mdi-navigation-close right"></i></span>
-                    <ul>
-                      <li><b>Tools:</b> React, Django, Large Language Model</li>
-                      <li>Co-founded and built the product aimed at students who struggle with time-management.</li>
-                      <li>Designed and implemented a system to extract course deadlines from a syllabus using a Large Language Model and prompt tuning.</li>
-                      <li>Allows users to set up their entire semester in minutes.</li>
-                    </ul>
-                    <div class="card-action">
-                      <a aria-label="Visit Syllabyte website" href="https://www.mysyllabyte.com/" target="_blank" data-position="top"
-                        data-tooltip="View Online"
-                        class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                          class="fa fa-external-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col s12 m6 l4">
-                <div class="card medium">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img alt="Distributed Systems Project logo" src="/assets/img/distributed-systems-logo.svg" style="height: 100%; width: 100%" class="activator" />
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator blue-text hoverline">Distributed Key-Value Store<i
-                        class="mdi-navigation-more-vert right"></i></span>
-                    <p>
-                      A highly available, dynamically scalable, fault-tolerant distributed key-value store.
-                    </p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text"><small>Accomplishments</small><i
-                        class="mdi-navigation-close right"></i></span>
-                    <ul>
-                      <li><b>Tools:</b> Java, JUnit</li>
-                      <li>Led a 3-member team to design and develop the system with a caching layer for sub-millisecond latency.</li>
-                      <li>Employed JUnit for test-driven development.</li>
-                      <li>Enhanced the storage service with a notification mechanism, enabling client subscription to data mutations.</li>
-                    </ul>
-                    <div class="card-action">
-                      <a aria-label="Visit the GitHub repo for Distributed Systems project" href="https://github.com/Muhammedyakubu/ECE419-Distributed-Database"
-                        target="_blank" data-position="top" data-tooltip="View Source"
-                        class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                          class="fa fa-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col s12 m6 l4">
-                <div class="card medium">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img alt="Deep Learning Projects logo" src="/assets/img/Blog-Images-Forget-Machine-Learning-Humans-Still-Have-a-Lot-to-Learn-Part-II.jpg" style="height: 100%; width: 100%" class="activator" />
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator blue-text hoverline">Deep Learning Projects<i
-                        class="mdi-navigation-more-vert right"></i></span>
-                    <p>
-                      Various deep learning projects including Pokémon classifier and spam detector.
-                    </p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text"><small>Accomplishments</small><i
-                        class="mdi-navigation-close right"></i></span>
-                    <ul>
-                      <li><b>Tools:</b> Python, PyTorch, Pandas, NumPy</li>
-                      <li>Developed a Pokémon classifier using transfer learning with a pre-trained CNN (GoogLeNet) and a custom ANN.</li>
-                      <li>Implemented a recurrent neural network to detect spam emails with 97% accuracy.</li>
-                      <li>Employed data cleaning and augmentation techniques to enhance dataset quality and quantity.</li>
-                    </ul>
-                    <div class="card-action">
-                      <a aria-label="Visit the GitHub repo for Deep Learning projects" href="https://github.com/RohanrPatel/APS360Project"
-                        target="_blank" data-position="top" data-tooltip="View Source"
-                        class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                          class="fa fa-github"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
+            <div id="recent-projects" class="row">
+              <!-- Recent projects will be dynamically inserted here -->
+            </div>
+            <div class="row center-align">
+              <button id="load-more" class="btn waves-effect waves-light blue">Load More</button>
             </div>
           </div>
         </section>
@@ -754,6 +664,100 @@
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
+  </script>
+
+  <!-- Add this script tag just before the closing </body> tag -->
+  <script>
+    // Array of projects
+    const projects = [
+      {
+        title: "Syllabyte",
+        image: "/assets/img/syllabyte-logo.png",
+        description: "A product that provides students with a daily, automatically prioritized to-do list for their coursework.",
+        accomplishments: [
+          "Tools: React, Django, Large Language Model",
+          "Co-founded and built the product aimed at students who struggle with time-management.",
+          "Designed and implemented a system to extract course deadlines from a syllabus using a Large Language Model and prompt tuning.",
+          "Allows users to set up their entire semester in minutes."
+        ],
+        link: "https://www.mysyllabyte.com/"
+      },
+      {
+        title: "Distributed Key-Value Store",
+        image: "/assets/img/distributed-systems-logo.svg",
+        description: "A highly available, dynamically scalable, fault-tolerant distributed key-value store.",
+        accomplishments: [
+          "Tools: Java, JUnit",
+          "Led a 3-member team to design and develop the system with a caching layer for sub-millisecond latency.",
+          "Employed JUnit for test-driven development.",
+          "Enhanced the storage service with a notification mechanism, enabling client subscription to data mutations."
+        ],
+        link: "https://github.com/Muhammedyakubu/ECE419-Distributed-Database"
+      },
+      {
+        title: "Deep Learning Projects",
+        image: "/assets/img/Blog-Images-Forget-Machine-Learning-Humans-Still-Have-a-Lot-to-Learn-Part-II.jpg",
+        description: "Various deep learning projects including Pokémon classifier and spam detector.",
+        accomplishments: [
+          "Tools: Python, PyTorch, Pandas, NumPy",
+          "Developed a Pokémon classifier using transfer learning with a pre-trained CNN (GoogLeNet) and a custom ANN.",
+          "Implemented a recurrent neural network to detect spam emails with 97% accuracy.",
+          "Employed data cleaning and augmentation techniques to enhance dataset quality and quantity."
+        ],
+        link: "https://github.com/RohanrPatel/APS360Project"
+      }
+    ];
+
+    let displayedProjects = 0;
+    const projectsPerLoad = 1;
+
+    function createProjectCard(project) {
+      return `
+        <div class="col s12 m6 l4">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img alt="${project.title} logo" src="${project.image}" style="height: 100%; width: 75%; display: block; margin-left: auto; margin-right: auto;" class="activator" />
+            </div>
+            <div class="card-content">
+              <span class="card-title activator blue-text hoverline">${project.title}<i class="mdi-navigation-more-vert right"></i></span>
+              <p>${project.description}</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
+              <ul>
+                ${project.accomplishments.map(accomplishment => `<li>${accomplishment}</li>`).join('')}
+              </ul>
+              <div class="card-action">
+                <a aria-label="Visit ${project.title} website" href="${project.link}" target="_blank" data-position="top"
+                  data-tooltip="View Online"
+                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                    class="fa fa-external-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function loadProjects() {
+      const recentProjectsContainer = document.getElementById('recent-projects');
+      const endIndex = Math.min(displayedProjects + projectsPerLoad, projects.length);
+      
+      for (let i = displayedProjects; i < endIndex; i++) {
+        recentProjectsContainer.innerHTML += createProjectCard(projects[i]);
+      }
+      
+      displayedProjects = endIndex;
+      
+      if (displayedProjects >= projects.length) {
+        document.getElementById('load-more').style.display = 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      loadProjects();
+      document.getElementById('load-more').addEventListener('click', loadProjects);
+    });
   </script>
 </body>
 
