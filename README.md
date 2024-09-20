@@ -1,5 +1,9 @@
 Muhammed Yakubu's clone of [Varad Bhogayata's](https://github.com/varadbhogayata/varadbhogayata.github.io.git) portfolio
 
+# Activity 1 Screenshot
+![image](https://github.com/user-attachments/assets/b05c9af0-b976-46fd-aace-2d908037d06c)
+
+
 # Personal Portfolio ⚡️ 
 > A clean, beautiful, responsive portfolio template for Software Developers!
 
