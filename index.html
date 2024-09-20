@@ -680,19 +680,8 @@
           "Designed and implemented a system to extract course deadlines from a syllabus using a Large Language Model and prompt tuning.",
           "Allows users to set up their entire semester in minutes."
         ],
-        link: "https://www.mysyllabyte.com/"
-      },
-      {
-        title: "Distributed Key-Value Store",
-        image: "/assets/img/distributed-systems-logo.svg",
-        description: "A highly available, dynamically scalable, fault-tolerant distributed key-value store.",
-        accomplishments: [
-          "Tools: Java, JUnit",
-          "Led a 3-member team to design and develop the system with a caching layer for sub-millisecond latency.",
-          "Employed JUnit for test-driven development.",
-          "Enhanced the storage service with a notification mechanism, enabling client subscription to data mutations."
-        ],
-        link: "https://github.com/Muhammedyakubu/ECE419-Distributed-Database"
+        link: "https://www.mysyllabyte.com/",
+        date: "2024-03-01"
       },
       {
         title: "Deep Learning Projects",
@@ -704,7 +693,21 @@
           "Implemented a recurrent neural network to detect spam emails with 97% accuracy.",
           "Employed data cleaning and augmentation techniques to enhance dataset quality and quantity."
         ],
-        link: "https://github.com/RohanrPatel/APS360Project"
+        link: "https://github.com/RohanrPatel/APS360Project",
+        date: "2022-09-30"
+      },
+      {
+        title: "Distributed Key-Value Store",
+        image: "/assets/img/distributed-systems-logo.svg",
+        description: "A highly available, dynamically scalable, fault-tolerant distributed key-value store.",
+        accomplishments: [
+          "Tools: Java, JUnit",
+          "Led a 3-member team to design and develop the system with a caching layer for sub-millisecond latency.",
+          "Employed JUnit for test-driven development.",
+          "Enhanced the storage service with a notification mechanism, enabling client subscription to data mutations."
+        ],
+        link: "https://github.com/Muhammedyakubu/ECE419-Distributed-Database",
+        date: "2023-02-01"
       }
     ];
 
@@ -741,15 +744,16 @@
 
     function loadProjects() {
       const recentProjectsContainer = document.getElementById('recent-projects');
-      const endIndex = Math.min(displayedProjects + projectsPerLoad, projects.length);
+      const sortedProjects = projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const endIndex = Math.min(displayedProjects + projectsPerLoad, sortedProjects.length);
       
       for (let i = displayedProjects; i < endIndex; i++) {
-        recentProjectsContainer.innerHTML += createProjectCard(projects[i]);
+        recentProjectsContainer.innerHTML += createProjectCard(sortedProjects[i]);
       }
       
       displayedProjects = endIndex;
       
-      if (displayedProjects >= projects.length) {
+      if (displayedProjects >= sortedProjects.length) {
         document.getElementById('load-more').style.display = 'none';
       }
     }
